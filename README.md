@@ -1,93 +1,69 @@
-[project_readme.md](https://github.com/user-attachments/files/34273652/project_readme.md)
-# Netlify Web Project
+# Connect & Stock
 
-A clean, modern static web application configured for seamless deployment with **Netlify** and hostable via **GitHub Repositories**.
-
----
-
-## 📌 Features
-
-- **Responsive Design:** Optimized for mobile, tablet, and desktop viewports.
-- **Netlify Ready:** Pre-configured with routing and redirect rules (`_redirects` and `netlify.toml`).
-- **Clean Architecture:** Lightweight, dependency-free static structure (`HTML5`, `CSS3`, `JavaScript ES6`).
+A static contact directory and stock management interface built with HTML, CSS, and JavaScript. Optimized for quick deployment via GitHub Pages, Netlify, or Vercel.
 
 ---
 
-## 📁 Project Structure
+## 🚀 Features
 
-```text
-.
-├── index.html          # Entry HTML document
-├── netlify.toml        # Netlify build and deployment config
-├── _redirects          # Netlify rewrite and redirect rules
-├── README.md           # Repository documentation
-└── assets/
-    ├── app.js          # Interactive JavaScript logic
-    └── style.css       # Main stylesheet
+- **Contact Directory**: Manage and search contact entries efficiently.
+- **Stock Tracker**: Track inventory, product stock levels, and status updates.
+- **Responsive Layout**: Designed with a clean sidebar-navigation aesthetic for desktop and mobile viewports.
+- **Zero Dependencies**: Pure HTML, CSS, and plain Vanilla JavaScript — fast and lightweight with no build step required.
+
+---
+
+## 📁 Repository Structure
+
+```
+├── index.html          # Main HTML entry point
+├── assets/
+│   ├── style.css       # Core stylesheets
+│   └── app.js          # App interactivity and logic
+├── netlify.toml        # Netlify configuration (headers & build settings)
+├── _redirects          # Netlify routing rules
+└── README.md           # Project documentation
 ```
 
 ---
 
-## 🛠️ Local Development
+## 🌐 Deploy to GitHub Pages
 
-To run and view this project locally on your machine:
+### Option 1: Via GitHub Actions (Recommended)
+1. Push this repository to GitHub.
+2. Go to **Settings** > **Pages**.
+3. Under **Build and deployment** > **Source**, select **GitHub Actions**.
+4. GitHub will automatically detect and deploy your static site.
+
+### Option 2: Deploy from Branch
+1. Push your code to the `main` (or `master`) branch.
+2. Go to **Settings** > **Pages** in your repository.
+3. Under **Source**, select **Deploy from a branch**.
+4. Select `main` branch and `/ (root)` folder, then click **Save**.
+5. Your site will be live at `https://<your-username>.github.io/<your-repo-name>/`.
+
+---
+
+## ⚡ Deploy to Netlify
+
+1. Push your repo to GitHub.
+2. Sign in to [Netlify](https://www.netlify.com/).
+3. Click **Add new site** > **Import an existing project**.
+4. Select **GitHub**, choose this repository, and set the publish directory to `.` (root).
+5. Click **Deploy**.
+
+---
+
+## 💻 Local Setup & Development
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/your-repository-name.git
+   git clone https://github.com/YOUR-USERNAME/connect-stock.git
+   cd connect-stock
    ```
 
-2. **Navigate into the project folder:**
-   ```bash
-   cd your-repository-name
-   ```
-
-3. **Open the project:**
-   - Double-click `index.html` to open it directly in any browser.
-   - Or use VS Code's **Live Server** extension for real-time live reloading.
-
----
-
-## 🚀 How to Upload to GitHub
-
-If you haven't published this to GitHub yet, follow these step-by-step terminal commands:
-
-```bash
-# 1. Initialize git repository
-git init
-
-# 2. Add all files
-git add .
-
-# 3. Create your initial commit
-git commit -m "Initial commit: Add Netlify site structure and documentation"
-
-# 4. Rename main branch
-git branch -M main
-
-# 5. Link to your GitHub remote repository (replace with your repository URL)
-git remote add origin https://github.com/your-username/your-repository-name.git
-
-# 6. Push to GitHub
-git push -u origin main
-```
-
----
-
-## 🌐 Deploying to Netlify via GitHub
-
-Once your code is pushed to GitHub, set up automatic deployments with Netlify:
-
-1. Log into your [Netlify Dashboard](https://app.netlify.com/).
-2. Click **Add new site** → **Import an existing project**.
-3. Select **GitHub** as your Git provider and authorize Netlify.
-4. Pick your project repository.
-5. Configure your site settings:
-   - **Build command:** *(Leave blank)*
-   - **Publish directory:** `.` (root directory)
-6. Click **Deploy Site**.
-
-> **Note:** Any future push to your `main` branch on GitHub will automatically trigger a deployment on Netlify!
+2. **Run locally:**
+   Open `index.html` directly in any web browser, or use VS Code's **Live Server** extension.
 
 ---
 

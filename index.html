@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A simple contact directory and stock tracker.">
+  <title>Connect & Stock</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#overview"><span class="brand-icon">C</span> connect<span>&stock</span></a>
+    <p class="nav-label">WORKSPACE</p>
+    <button class="nav-link active" data-page="overview">▦ &nbsp; Overview</button>
+    <button class="nav-link" data-page="contacts">♧ &nbsp; Contacts</button>
+    <button class="nav-link" data-page="stock">▤ &nbsp; Stock tracker</button>
+    <div class="sidebar-note"><strong>Stay organised.</strong><br><span>Manage people and products in one simple place.</span></div>
+    <div class="side-foot">NETLIFY-READY WEB PROJECT</div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar"><span>Workspace / <b id="crumb">Overview</b></span><span class="profile">● &nbsp; Personal workspace</span></header>
+    <div id="notice" class="notice" role="status" aria-live="polite"></div>
+
+    <section id="overview" class="page active">
+      <section class="welcome">
+        <div><p class="eyebrow">YOUR WORKSPACE</p><h1>A clearer view of your day.</h1><p class="sub">Keep your contacts close and your inventory in check.</p></div>
+        <div class="welcome-mark">C<span>+</span>S</div>
+      </section>
+      <section class="stats">
+        <article class="stat-card"><div class="stat-top">TOTAL CONTACTS <span class="stat-icon lilac">♧</span></div><strong id="contactCount">0</strong><small>People in your directory</small></article>
+        <article class="stat-card"><div class="stat-top">PRODUCTS LISTED <span class="stat-icon peach">▤</span></div><strong id="productCount">0</strong><small>Different stock items</small></article>
+        <article class="stat-card"><div class="stat-top">TOTAL UNITS <span class="stat-icon mint">▦</span></div><strong id="totalUnits">0</strong><small>Units currently in stock</small></article>
+        <article class="stat-card"><div class="stat-top">LOW STOCK ITEMS <span class="stat-icon yellow">!</span></div><strong id="lowStock">0</strong><small>Items with 5 units or fewer</small></article>
+      </section>
+      <section class="two-col">
+        <div class="panel"><div class="panel-heading"><div><p class="eyebrow">DIRECTORY</p><h2>Recent contacts</h2></div><button class="text-link" data-go="contacts">View all →</button></div><div id="recentContacts" class="simple-list"></div></div>
+        <div class="panel"><div class="panel-heading"><div><p class="eyebrow">INVENTORY</p><h2>Recent stock items</h2></div><button class="text-link" data-go="stock">View all →</button></div><div id="recentProducts" class="simple-list"></div></div>
+      </section>
+    </section>
+
+    <section id="contacts" class="page">
+      <div class="page-heading"><div><p class="eyebrow">PEOPLE</p><h1>Contact directory</h1><p class="sub">Store and find important contact details.</p></div><span class="count-pill" id="contactPill">0 contacts</span></div>
+      <div class="panel form-panel"><div class="panel-heading"><div><p class="eyebrow">NEW ENTRY</p><h2>Add a contact</h2></div></div>
+        <form id="contactForm" class="form-grid">
+          <label>Full name<input name="name" placeholder="e.g. Aditi Sen" required maxlength="80"></label>
+          <label>Phone number<input name="phone" placeholder="e.g. 9876543210" required maxlength="25"></label>
+          <label class="wide">Email address<input type="email" name="email" placeholder="name@example.com" maxlength="120"></label>
+          <button class="primary-btn" type="submit">＋ Save contact</button>
+        </form>
+      </div>
+      <div class="panel"><div class="panel-heading"><div><p class="eyebrow">YOUR PEOPLE</p><h2>All contacts</h2></div><input id="contactSearch" class="search-input" placeholder="Search contacts..." aria-label="Search contacts"></div>
+        <div class="table-wrap"><table><thead><tr><th>NAME</th><th>PHONE</th><th>EMAIL</th><th>ACTION</th></tr></thead><tbody id="contactRows"></tbody></table></div>
+      </div>
+    </section>
+
+    <section id="stock" class="page">
+      <div class="page-heading"><div><p class="eyebrow">INVENTORY</p><h1>Stock tracker</h1><p class="sub">Track products, quantities and item value.</p></div><span class="count-pill" id="productPill">0 products</span></div>
+      <div class="panel form-panel"><div class="panel-heading"><div><p class="eyebrow">NEW ITEM</p><h2>Add a stock item</h2></div></div>
+        <form id="productForm" class="form-grid">
+          <label>Product name<input name="name" placeholder="e.g. Notebook" required maxlength="80"></label>
+          <label>Category<input name="category" placeholder="e.g. Stationery" maxlength="60"></label>
+          <label>Quantity<input type="number" min="0" step="1" name="quantity" value="0" required></label>
+          <label>Unit price (₹)<input type="number" min="0" step="0.01" name="price" value="0" required></label>
+          <button class="primary-btn" type="submit">＋ Add product</button>
+        </form>
+      </div>
+      <div class="panel"><div class="panel-heading"><div><p class="eyebrow">INVENTORY LIST</p><h2>All products</h2></div><input id="productSearch" class="search-input" placeholder="Search products..." aria-label="Search products"></div>
+        <div class="table-wrap"><table><thead><tr><th>PRODUCT</th><th>CATEGORY</th><th>QUANTITY</th><th>UNIT PRICE</th><th>STOCK VALUE</th><th>ACTION</th></tr></thead><tbody id="productRows"></tbody></table></div>
+        <p class="table-note">Low stock is marked when quantity is 5 units or fewer. Use a positive or negative number to adjust stock.</p>
+      </div>
+    </section>
+    <footer>Connect & Stock <span>Simple tools for everyday organisation.</span></footer>
+  </main>
+</body>
+</html>
